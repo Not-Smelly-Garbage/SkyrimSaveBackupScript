@@ -9,7 +9,7 @@ Put both files in
 - It copies the 6 newest saves  to the "backup" folder.
 - It deletes old saves the "old" folder.
 - It moves existing saves from the "backup" folder to the "old" folder.
-*** - It then deletes the oldest saves until only the 6 newest remain in the main folder.***
+- **It then deletes the oldest saves until only the** _**6 newest remain**_ **in the main folder.**
 
 
 To disable that last bit just delete the last chunk, its all anotated.
