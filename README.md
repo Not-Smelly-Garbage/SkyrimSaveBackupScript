@@ -4,12 +4,13 @@ Put both files in
 
 # What it does:
 
-- It runs [SKSE Co-Save Cleaner](https://www.nexusmods.com/skyrimspecialedition/mods/17377) at the beginning, deleting excess skse co-saves.
-- It creates a "backup" folder along with "old" inside of it.
-- It copies the 6 newest saves  to the "backup" folder.
-- It deletes old saves the "old" folder.
-- It moves existing saves from the "backup" folder to the "old" folder.
-- **It then deletes the oldest saves until only the** _**6 newest remain**_ **in the main folder.**
+- Runs [SKSE Co-Save Cleaner](https://www.nexusmods.com/skyrimspecialedition/mods/17377) at the beginning, deleting excess skse co-saves.
+- Checks if everything is already backed up from the script
+- Creates a "backup" folder along with "old" inside of it.
+- Copies the 6 newest saves  to the "backup" folder.
+- Deletes old saves the "old" folder.
+- Moves existing saves from the "backup" folder to the "old" folder.
+- **It then _DELETES_ the oldest saves until only the** _**6 newest remain**_ **in the main folder.**
 
 
 To disable that last bit just delete the last chunk, its all anotated.
