@@ -1,6 +1,16 @@
 @echo off
 .\simple_orphaned_skse_co-save_deleter.vbs
 
+set "source_folder=.\"
+set "backup_folder=backup"
+cd %source_folder%
+
+REM Create the "backup" folder if it doesn't exist
+if not exist %backup_folder% mkdir %backup_folder%
+
+REM Create the "old" folder inside "backup" if it doesn't exist
+if not exist %backup_folder%\old mkdir %backup_folder%\old
+
 REM Compare the files in the main directory with the files in the backup directory
 setlocal enabledelayedexpansion
 set "files_are_same=true"
@@ -32,21 +42,6 @@ set "source_folder=.\"
 set "backup_folder=backup"
 
 cd %source_folder%
-
-REM Check if the files in the main root directory are exactly the same as in "backup"
-fc /b "%source_folder%" "%backup_folder%" >nul
-
-REM If the result code is 0 (no differences), wait for 5 seconds and display a message
-if %errorlevel% equ 0 (
-    echo Files already backed up! Make some new saves!
-    timeout /t 5
-    exit /b
-
-REM Create the "backup" folder if it doesn't exist
-if not exist %backup_folder% mkdir %backup_folder%
-
-REM Create the "old" folder inside "backup" if it doesn't exist
-if not exist %backup_folder%\old mkdir %backup_folder%\old
 
 REM Delete old ".skse" and ".ess" files in the "old" folder
 for %%i in (%backup_folder%\old\*.skse %backup_folder%\old\*.ess) do (
@@ -101,3 +96,4 @@ for /f "delims=" %%f in ('dir /b /a-d /o-d *.ess ^| findstr /n "^"') do (
         del "!file:*:=!"
     )
 )
+
