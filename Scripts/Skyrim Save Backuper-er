@@ -31,7 +31,7 @@ for %%f in (*.skse *.ess) do (
 if %files_are_same%==true (
     echo Files already backed up
     echo Make some new saves
-    timeout /t 5 > nul
+    timeout /t 3 > nul
     exit
 )
 
