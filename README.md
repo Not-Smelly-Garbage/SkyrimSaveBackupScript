@@ -23,9 +23,9 @@ After installing [SKSE Co-Save Cleaner](https://www.nexusmods.com/skyrimspeciale
 Do NOT rename [SKSE Co-Save Cleaner's](https://www.nexusmods.com/skyrimspecialedition/mods/17377) vbs file unless you plan on editing my script
 
 
-# Optional Files:
+# AutoBackup + Launcher:
 
-Here's the readme from the optional file to see if you even wanna download it
+Here's the readme from the AutoBackup + Launcher to see if you even wanna download it
 
 
 
