@@ -18,7 +18,8 @@ You could also change the max save numbers and whatnot to whatever, I just keep 
 
 # Installation:
 
-After installing [SKSE Co-Save Cleaner](https://www.nexusmods.com/skyrimspecialedition/mods/17377) properly simply run the .bat file from anywhere on your computer (except like system32 or sumn idk, just put it on ur desktop or sumn)
+After installing [SKSE Co-Save Cleaner](https://www.nexusmods.com/skyrimspecialedition/mods/17377) properly simply put "Skyrim Save Backuper-er.bat" in your skyrim save folder for it to work properly
+(It'll work from other places, but the file check wont work and it'll back it up even if already backed up, not bad but not good)
 
 Do NOT rename [SKSE Co-Save Cleaner's](https://www.nexusmods.com/skyrimspecialedition/mods/17377) vbs file unless you plan on editing my script
 
