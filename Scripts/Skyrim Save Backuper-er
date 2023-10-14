@@ -1,11 +1,12 @@
 @echo off
 "%HOMEDRIVE%%HOMEPATH%\Documents\My Games\Skyrim Special Edition\Saves\simple_orphaned_skse_co-save_deleter.vbs"
-timeout /t 1
+echo Deleting Leftover SKSE Co-Saves
+timeout /t 3
 cls
 
 set "source_folder=%HOMEDRIVE%%HOMEPATH%\Documents\My Games\Skyrim Special Edition\Saves\"
 set "backup_folder=%HOMEDRIVE%%HOMEPATH%\Documents\My Games\Skyrim Special Edition\Saves\backup"
-set "filessame=true"
+set "filessame="
 
 REM Create the "backup" folder if it doesn't exist
 if not exist "%backup_folder%" mkdir "%backup_folder%"
@@ -93,3 +94,4 @@ for /f "delims=" %%f in ('dir /b /a-d /o-d *.ess ^| findstr /n "^"') do (
         copy "!file:*:=!" "%backup_folder%\"
     )
 )
+timeout /t 1
