@@ -4,12 +4,17 @@ Write-Host ""
 Write-Host "Monitoring Save Files..."
 Write-Host ""
 
+$lastFileCount = -1
+
 while ($true) {
 
     $fileCount = (Get-ChildItem -Path $folderPath -Filter "*.ess").Count
 
-    Write-Host "$fileCount Saves Detected"
-	Write-Host ""
+    if ($fileCount -ne $lastFileCount) {
+        Write-Host "$fileCount Saves Detected"
+	    Write-Host ""
+        $lastFileCount = $fileCount
+    }
 	
     if ($fileCount -ge 12) {
 		
@@ -17,7 +22,7 @@ while ($true) {
         Write-Host "Backed Up Saves at $currentTime" -BackgroundColor Green -ForegroundColor Black
 		Write-Host ""
 		
-        Start-Process -FilePath "$folderPath\Skyrim Save Backuper-er.bat"
+        Start-Process -FilePath "$folderPath\Skyrim Save Backuper-er.bat" -WindowStyle Minimized
         Start-Sleep -Seconds 5
 
 		Write-Host "- - - - - - - - - - - - - - - - - - - -"
@@ -32,7 +37,6 @@ while ($true) {
         Start-Sleep -Seconds 4
         break
     }
-
 
     Start-Sleep -Seconds 60
 }
